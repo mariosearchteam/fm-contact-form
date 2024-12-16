@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+/* colors */
+/* typography */
+/* spacer */
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1.2;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  line-height: 1.6;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 150%;
+  color: hsl(187, 24%, 22%);
+  background: hsl(148, 38%, 91%);
+}
+
+.text-preset-1 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: -1px;
+}
+
+.text-preset-2 {
+  font-size: 1.125rem;
+}
+.text-preset-2--bold {
+  font-weight: 700;
+}
+
+.text-preset-3 {
+  font-size: 1rem;
+}
+
+/* utility classes */
+.flow-content > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 0.5rem;
+}
+
+.card {
+  background: hsl(0, 0%, 100%);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.form {
+  margin-top: 2rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 15rem;
+}
+.form__group.radio-group {
+  position: relative;
+  flex-direction: row;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+}
+
+input,
+textarea {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(186, 15%, 59%);
+  font-family: inherit;
+  font-size: 1.125rem;
+}
+input:focus-visible, input:hover,
+textarea:focus-visible,
+textarea:hover {
+  outline: none;
+  border-color: hsl(169, 82%, 27%);
+}
+
+.asterisk {
+  color: hsl(169, 82%, 27%);
+  margin-left: 0.5rem;
+}
+
+label[for=query-type] {
+  display: block;
+  margin-top: 1.5rem;
+}
+label[for=query-type]:hover {
+  border-color: hsl(169, 82%, 27%);
+}
+
+/* Radio Buttons */
+.query-option {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.query-option:hover, .query-option:focus-visible {
+  border-color: hsl(169, 82%, 27%);
+}
+.query-option--selected {
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
+}
+
+.query-option input {
+  accent-color: hsl(169, 82%, 27%);
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.query-text {
+  margin-left: 0.5rem;
+}
+
+.form__checkbox {
+  margin-top: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+.form__checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.form__checkbox input {
+  accent-color: hsl(169, 82%, 27%);
+}
+.form__checkbox span {
+  cursor: pointer;
+}
+
+.form__message {
+  margin-top: 2rem;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  cursor: pointer;
+}
+.button:hover {
+  background: #084f42;
+}
+
+.card {
+  position: relative;
+}
+
+.success {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 19rem;
+  background: hsl(187, 24%, 22%);
+  color: hsl(0, 0%, 100%);
+}
+.success :first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+.success .text-preset-3 {
+  color: hsl(148, 38%, 91%);
+}
+
+.error {
+  border-color: hsl(0, 66%, 54%) !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.just-validate-error-label {
+  color: hsl(0, 66%, 54%) !important;
+}
+
+@media (min-width: 40rem) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form__group {
+    max-width: unset;
+  }
+  textarea {
+    min-width: 42rem;
+  }
+  .success {
+    max-width: 28rem;
+  }
+}/*# sourceMappingURL=style.css.map */
