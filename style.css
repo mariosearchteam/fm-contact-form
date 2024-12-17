@@ -108,7 +108,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-width: 15rem;
 }
 .form__group.radio-group {
   position: relative;
@@ -249,15 +248,16 @@ label[for=query-type]:hover {
   color: hsl(0, 66%, 54%) !important;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 44rem) {
   .split {
     grid-template-columns: 1fr 1fr;
   }
   .form__group {
     max-width: unset;
   }
-  textarea {
-    min-width: 42rem;
+  .card {
+    width: 90%;
+    max-width: 46rem;
   }
   .success {
     max-width: 28rem;
